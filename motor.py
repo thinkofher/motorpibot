@@ -30,22 +30,22 @@ GPIO.setup(enb, GPIO.OUT)
 GPIO.output(in3, GPIO.OUT)
 GPIO.output(in4, GPIO.OUT)
 
+power = 50
 pa = GPIO.PWM(ena, 1000)
-pa.start(25)
-pa.ChangeDutyCycle(100)
+pa.start(power)
 
 pb = GPIO.PWM(enb, 1000)
-pb.start(25)
-pb.ChangeDutyCycle(100)
+pb.start(power)
 
-# First test
+distance = 3
+
 GPIO.output(in1, GPIO.HIGH)
 GPIO.output(in2, GPIO.LOW)
 
 GPIO.output(in3, GPIO.HIGH)
 GPIO.output(in4, GPIO.LOW)
 
-sleep(1)
+sleep(distance)
 
 GPIO.output(in1, GPIO.LOW)
 GPIO.output(in2, GPIO.HIGH)
@@ -53,6 +53,6 @@ GPIO.output(in2, GPIO.HIGH)
 GPIO.output(in3, GPIO.LOW)
 GPIO.output(in4, GPIO.HIGH)
 
-sleep(1)
+sleep(distance)
 
 GPIO.cleanup()
