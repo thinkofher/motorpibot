@@ -11,4 +11,4 @@ Aftery many months i finally bought some stuff for my precious Raspberry Pi 3B+ 
 - L298N Dual H-Bridge Motor Controller
 - Dagu 4WD Magician Chassis (4x DC engines)
 - 1x prototyping plate
-- A log of wires and insulating tape
+- A lot of wires and insulating tape
