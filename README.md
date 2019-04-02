@@ -1,5 +1,8 @@
 # Raspberry Pi MotorRobot
 
+![](https://github.com/thinkofher/motorpibot/blob/master/data/motor.jpg)
+This is a photo of very early stage of project.
+
 ## Description
 Aftery many months i finally bought some stuff for my precious Raspberry Pi 3B+ computer and started tinkering. This is a repository for my attempt to build four-wheeled bot with some way to control it with bluetooth controller. I am also planning to use some machine learning algorithms in the future (but now this is just speculation).
 
