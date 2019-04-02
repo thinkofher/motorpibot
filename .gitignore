@@ -1,0 +1,12 @@
+# python 3 virutalenv
+env
+
+# text editors
+.vscode
+
+# all notebooks
+*ipynb
+/.ipynb_checkpoints
+
+# all pyc files
+*.pyc
