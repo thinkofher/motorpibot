@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import RPi.GPIO as GPIO
 from motor.motor import SetupMotor, MotorDriver
 
