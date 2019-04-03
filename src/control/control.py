@@ -35,4 +35,5 @@ class ScreenController:
                 else:
                     msgClicked(self.screen, "")
         finally:
+            self.driver.endSession()
             curEndSession(self.screen)

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import RPi.GPIO as GPIO
 from src.motor.motor import SetupMotor, MotorDriver
+from src.control.curses import curNewScreen
+from src.control.control import ScreenController
 
 # Motor A1, A2
 in1 = 24
@@ -23,8 +25,6 @@ motor1.changePower(100)
 motor2.changePower(100)
 
 driver = MotorDriver(motor1, motor2)
-driver.turnLeftForward(2)
-driver.turnRightBackward(2)
-driver.turnRightForward(2)
-driver.turnLeftBackward(2)
-driver.endSession()
+screen = curNewScreen()
+controller = ScreenController(screen, driver)
+controller.run()
