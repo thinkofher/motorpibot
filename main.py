@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import RPi.GPIO as GPIO
-from motor.motor import SetupMotor, MotorDriver
+from src.motor.motor import SetupMotor, MotorDriver
 
 # Motor A1, A2
 in1 = 24
