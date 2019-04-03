@@ -28,10 +28,10 @@ class ScreenController:
                     self.driver.backward(self._distance)
                 elif char == curses.KEY_LEFT:
                     msgClicked(self.screen, 'LEFT')
-                    self.driver.turnLeftForward(self._distance)
+                    self.driver.turnLeftInPlace(self._distance)
                 elif char == curses.KEY_RIGHT:
                     msgClicked(self.screen, 'RIGHT')
-                    self.driver.turnRightForward(self._distance)
+                    self.driver.turnRightInPlace(self._distance)
                 else:
                     msgClicked(self.screen, "")
         finally:
