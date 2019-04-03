@@ -38,6 +38,10 @@ class MotorDriver:
         GPIO.output(self._motorB.in1_pin, GPIO.HIGH)
         GPIO.output(self._motorB.in2_pin, GPIO.LOW)
         sleep(distance)
+        GPIO.output(self._motorA.in1_pin, GPIO.LOW)
+        GPIO.output(self._motorA.in2_pin, GPIO.LOW)
+        GPIO.output(self._motorB.in1_pin, GPIO.LOW)
+        GPIO.output(self._motorB.in2_pin, GPIO.LOW)
 
     def backward(self, distance):
         GPIO.output(self._motorA.in1_pin, GPIO.LOW)
@@ -45,6 +49,10 @@ class MotorDriver:
         GPIO.output(self._motorB.in1_pin, GPIO.LOW)
         GPIO.output(self._motorB.in2_pin, GPIO.HIGH)
         sleep(distance)
+        GPIO.output(self._motorA.in1_pin, GPIO.LOW)
+        GPIO.output(self._motorA.in2_pin, GPIO.LOW)
+        GPIO.output(self._motorB.in1_pin, GPIO.LOW)
+        GPIO.output(self._motorB.in2_pin, GPIO.LOW)
 
     def turnRightForward(self, distance):
         GPIO.output(self._motorA.in1_pin, GPIO.HIGH)
