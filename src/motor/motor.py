@@ -3,7 +3,7 @@ from time import sleep
 
 
 class SetupMotor:
-    startingPower = 25
+    pwmPower = 25
 
     def __init__(self, in1, in2, en):
         self.in1_pin = in1
@@ -20,9 +20,10 @@ class SetupMotor:
         # Setup of EN pin
         GPIO.setup(self.en, GPIO.OUT)
         self.pwm = GPIO.PWM(self.en, 1000)
-        self.pwm.start(self.startingPower)
+        self.pwm.start(self.pwmPower)
 
     def changePower(self, power):
+        self.pwmPower = power
         self.pwm.ChangeDutyCycle(power)
 
 
@@ -33,6 +34,8 @@ class MotorDriver:
         self._motorB = motorB
 
     def forward(self, distance):
+        self._motorA.setup()
+        self._motorB.setup()
         GPIO.output(self._motorA.in1_pin, GPIO.HIGH)
         GPIO.output(self._motorA.in2_pin, GPIO.LOW)
         GPIO.output(self._motorB.in1_pin, GPIO.HIGH)
@@ -41,6 +44,8 @@ class MotorDriver:
         GPIO.cleanup()
 
     def backward(self, distance):
+        self._motorA.setup()
+        self._motorB.setup()
         GPIO.output(self._motorA.in1_pin, GPIO.LOW)
         GPIO.output(self._motorA.in2_pin, GPIO.HIGH)
         GPIO.output(self._motorB.in1_pin, GPIO.LOW)
@@ -49,6 +54,8 @@ class MotorDriver:
         GPIO.cleanup()
 
     def turnLeftInPlace(self, distance):
+        self._motorA.setup()
+        self._motorB.setup()
         GPIO.output(self._motorA.in1_pin, GPIO.HIGH)
         GPIO.output(self._motorA.in2_pin, GPIO.LOW)
         GPIO.output(self._motorB.in1_pin, GPIO.LOW)
@@ -57,6 +64,8 @@ class MotorDriver:
         GPIO.cleanup()
 
     def turnRightInPlace(self, distance):
+        self._motorA.setup()
+        self._motorB.setup()
         GPIO.output(self._motorA.in1_pin, GPIO.LOW)
         GPIO.output(self._motorA.in2_pin, GPIO.HIGH)
         GPIO.output(self._motorB.in1_pin, GPIO.HIGH)
@@ -65,24 +74,32 @@ class MotorDriver:
         GPIO.cleanup()
 
     def turnLeftForward(self, distance):
+        self._motorA.setup()
+        self._motorB.setup()
         GPIO.output(self._motorA.in1_pin, GPIO.HIGH)
         GPIO.output(self._motorA.in2_pin, GPIO.LOW)
         sleep(distance)
         GPIO.cleanup()
 
     def turnRightBackward(self, distance):
+        self._motorA.setup()
+        self._motorB.setup()
         GPIO.output(self._motorB.in1_pin, GPIO.LOW)
         GPIO.output(self._motorB.in2_pin, GPIO.HIGH)
         sleep(distance)
         GPIO.cleanup()
 
     def turnLeftBackward(self, distance):
+        self._motorA.setup()
+        self._motorB.setup()
         GPIO.output(self._motorA.in1_pin, GPIO.LOW)
         GPIO.output(self._motorA.in2_pin, GPIO.HIGH)
         sleep(distance)
         GPIO.cleanup()
 
     def turnRightForward(self, distance):
+        self._motorA.setup()
+        self._motorB.setup()
         GPIO.output(self._motorB.in1_pin, GPIO.HIGH)
         GPIO.output(self._motorB.in2_pin, GPIO.LOW)
         sleep(distance)
