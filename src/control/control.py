@@ -22,16 +22,16 @@ class ScreenController:
                     break
                 elif char == curses.KEY_UP:
                     msgClicked(self.screen, 'UP')
-                    self.driver.forward(self.distance)
+                    self.driver.forward(self._distance)
                 elif char == curses.KEY_DOWN:
                     msgClicked(self.screen, 'DOWN')
-                    self.driver.backward(self.distance)
+                    self.driver.backward(self._distance)
                 elif char == curses.KEY_LEFT:
                     msgClicked(self.screen, 'LEFT')
-                    self.driver.turnLeftForward(self.distance)
+                    self.driver.turnLeftForward(self._distance)
                 elif char == curses.KEY_RIGHT:
                     msgClicked(self.screen, 'RIGHT')
-                    self.driver.turnRightForward(self.distance)
+                    self.driver.turnRightForward(self._distance)
                 else:
                     msgClicked(self.screen, "")
         finally:
