@@ -15,7 +15,9 @@ def msgClicked(screen, button):
     if len(button) == 0:
         msgString = "CANT RECOGNIZE!\n"
     else:
-        msgString = f'Clicked: {button}!\n'
+        msgString = 'Clicked: {}!\n'.format(
+            button
+        )
     try:
         screen.addstr(msgString,
                       curses.A_REVERSE)
